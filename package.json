@@ -1,0 +1,23 @@
+{
+  "name": "task_manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "task_manager_api"
+  },
+  "keywords": [
+    "task"
+  ],
+  "author": "sakshi shahare",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.0.0-beta.2",
+    "mongoose": "^8.2.2"
+  }
+}
