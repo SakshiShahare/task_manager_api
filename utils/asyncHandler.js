@@ -12,7 +12,7 @@ const asyncHandler = (fn) => async (req, res, next) =>{
 //so basically what the function is trying to do is to try to run the function and await for it if the function fails then 
 //error is thrown in the else case the function is resolve nothing else
 
-export  {asyncHandler};
+module.exports  =  {asyncHandler};
 // promise approach 
 
 // const asyncHandler = (requestHandler) =>{

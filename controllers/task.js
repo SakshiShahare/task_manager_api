@@ -1,10 +1,11 @@
-//const Task = require('../model/Task'); 
+const Task = require('../model/Task'); 
 const {asynHandler, asyncHandler} = require('../utils/asyncHandler');
+
 
 //creating the task and adding to the connected database
 const createTask = asyncHandler (async (req, res)=>{
     const task = await Task.create(req.body);
-    res.status(201).json({task});
+    res.statufs(201).json({task});
 })
 //getting all the task from the database
 const getAllTask = asyncHandler(async (req, res) =>{
@@ -12,7 +13,7 @@ const getAllTask = asyncHandler(async (req, res) =>{
     res.status(200).json({tasks});
 })
 //getting the task with the help of id
-const getTask = asynHandler(async (req ,res) =>{
+const getTask = asyncHandler(async (req ,res) =>{
     const {_id : taskID}= req.params;
     const task = await Task.findOne({_id : taskID});
 
@@ -24,7 +25,7 @@ const getTask = asynHandler(async (req ,res) =>{
 }
 )
 //deleting the task with the help of id 
-const deleteTask = asynHandler(async (req ,res) =>{
+const deleteTask = asyncHandler(async (req ,res) =>{
     const {_id : taskID}= req.params;
     const task = await Task.findOneAndDelete({_id : taskID});
 
@@ -35,7 +36,7 @@ const deleteTask = asynHandler(async (req ,res) =>{
         res.status(200).json({task});
 })
 //updating the task with the help of id
-const updateTask = asynHandler(async (req, res) =>{
+const updateTask = asyncHandler(async (req, res) =>{
     const {_id : taskID} = req.params;
     const task = await Task.findOneAndUpdate({_id : taskID} , req.body , {new : true , runValidators : true});
 

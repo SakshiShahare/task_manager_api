@@ -3,8 +3,16 @@ const express = require("express");
 const {connectDB} = require("./connect/connect.js");
 
 const app = express();
+const task = require('./route/task.js')
+//using the static assest
+app.use(express.static('./public'));
+//parsing the json body 
+app.use(express.json())
 
-const port = 3000;
+//routes
+app.use('/api/v1/tasks' , task)
+
+const port = 8000;
 
 
 const save = async () =>{
