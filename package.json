@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "nodemon app.js"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   "author": "sakshi shahare",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^5.0.0-beta.2",
     "mongoose": "^8.2.2"
   }
