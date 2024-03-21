@@ -1,14 +1,13 @@
 const mongoose = require("mongoose");
 const { isModuleNamespaceObject } = require("util/types");
 
-const taskSchema = new mongoose.Schema({
-    title : {
-        type : String,
-        required : true,
-    },
+const TaskSchema = new mongoose.Schema({
+
     description  : {
         type : String, 
-        required : true
+        required : [true, 'please provide the description'],
+        trim : true,
+        maxLength : [20 , 'max length is 20 characters']
     },
     completed : {
         type : Boolean,
@@ -16,6 +15,5 @@ const taskSchema = new mongoose.Schema({
     }
 })
 
-const Task =  mongoose.model("Task" , taskSchema);
+module.exports =   mongoose.model("Task" , TaskSchema);
 
-module.exports = Task;
