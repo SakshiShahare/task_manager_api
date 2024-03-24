@@ -1,24 +1,31 @@
 {
-  "name": "task_manager",
+  "name": "all_in_one",
   "version": "1.0.0",
-  "description": "",
+  "description": "a backend api with all the production level functionalities",
   "main": "app.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "task_manager_api"
+    "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
   },
   "keywords": [
-    "task"
+    "javascript",
+    "code"
   ],
-  "author": "sakshi shahare",
+  "author": "Sakshi Shahare",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cloudinary": "^2.0.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "express": "^5.0.0-beta.2",
-    "mongoose": "^8.2.2"
+    "express": "^4.19.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.2.2",
+    "mongoose-aggregate-paginate-v2": "^1.0.7",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
   }
 }
