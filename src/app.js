@@ -1,6 +1,6 @@
 import express from "express"
 import cors from "cors"
-import cookieParser from "cookie-parser";
+import {router} from "./routes/task.route.js"
 
 
 const app = express();
@@ -20,7 +20,8 @@ app.use(express.urlencoded({extended : true , limit : "16kb"}))
 //to use static assests 
 app.use(express.static("public"))
 
-//to crud on cookies
-app.use(cookieParser());
+//import router
+ app.use('/api/v1/tasks' , router);
+
 
 export default app;
